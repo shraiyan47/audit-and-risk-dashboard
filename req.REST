@@ -1,0 +1,372 @@
+ 
+################################ Montly Sheets ##########################################
+
+POST http://localhost:5000/api/MonthlySheet
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+{
+    "month_name": "April",
+    "starting_balance": 6500
+}
+
+### Create Monthly Sheet
+
+GET http://localhost:5000/api/MonthlySheet
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Get all monthly sheet
+
+
+GET http://localhost:5000/api/MonthlySheet/672ff3e2ca9ffa09f6237496
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Get a monthly sheet
+
+PUT http://localhost:5000/api/MonthlySheet/672ff3e2ca9ffa09f6237496
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+{
+    "month_name": "September, 2024",
+    "starting_balance": 5500
+}
+
+### Update a monthly sheet
+
+
+DELETE http://localhost:5000/api/MonthlySheet/671a39d3de23dc5867d6edd5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Soft Delete a monthly sheet
+
+DELETE http://localhost:5000/api/MonthlySheetDelete/671a392d8f7a2cf85c9d95a0
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Hard Delete a monthly sheet
+
+################################ Plan ##########################################
+
+POST http://localhost:5000/api/Plan
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+{
+    "plan_name": "Expense Category 3"
+}
+
+### Create Plan
+
+GET http://localhost:5000/api/Plan
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Get all Plan
+
+
+GET http://localhost:5000/api/Plan/671cfc49ea7ce40ff8a585e9
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Get a Plan
+
+PUT http://localhost:5000/api/Plan/671cfc49ea7ce40ff8a585e9
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+{
+    "plan_name": "Caegory 01"
+}
+
+### Update a Plan
+
+
+DELETE http://localhost:5000/api/Plan/671cf596ea7ce40ff8a585e2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Soft Delete a Plan
+
+DELETE http://localhost:5000/api/PlanDelete/671cfc49ea7ce40ff8a585e9
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Hard Delete a Plan
+
+################################ IncomePlan ##########################################
+
+POST http://localhost:5000/api/IncomePlan
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+{
+            "monthly_sheet_id":"672ff3e2ca9ffa09f6237496",
+            "plan_id":"671dd6c2d4d6392da584080b",
+            "plan_amount":2500
+}
+
+### Create IncomePlan
+
+GET http://localhost:5000/api/IncomePlan
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Get all IncomePlan
+
+
+GET http://localhost:5000/api/IncomePlan/671ddf29d4d6392da584081b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Get a IncomePlan
+
+PUT http://localhost:5000/api/IncomePlan/671ddf29d4d6392da584081b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+{
+    "plan_amount": "1800"
+}
+
+### Update a IncomePlan
+
+
+DELETE http://localhost:5000/api/IncomePlan/671ddf29d4d6392da584081b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Soft Delete a IncomePlan
+
+DELETE http://localhost:5000/api/IncomePlanDelete/671dd7e1d4d6392da5840817
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Hard Delete a IncomePlan
+
+
+################################ ExpensesPlan ##########################################
+
+POST http://localhost:5000/api/ExpensesPlan
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+{
+            "monthly_sheet_id":"671d697c80adaba396c82f03",
+            "plan_id":"671dd6dad4d6392da5840811",
+            "plan_amount":2700
+}
+
+### Create ExpensesPlan
+
+GET http://localhost:5000/api/ExpensesPlan
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Get all ExpensesPlan
+
+
+GET http://localhost:5000/api/ExpensesPlan/671e093316b0b393ed5f34e7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Get a ExpensesPlan
+
+PUT http://localhost:5000/api/ExpensesPlan/671e093316b0b393ed5f34e7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+{
+    "plan_amount": "1800"
+}
+
+### Update a ExpensesPlan
+
+
+DELETE http://localhost:5000/api/ExpensesPlan/671e093316b0b393ed5f34e7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Soft Delete a ExpensesPlan
+
+DELETE http://localhost:5000/api/ExpensesPlanDelete/671e093316b0b393ed5f34e7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Hard Delete a ExpensesPlan
+
+
+################################ Income ##########################################
+
+POST http://localhost:5000/api/Income
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTcxMjIzNiwiZXhwIjoxNzMxNzk4NjM2fQ.t73y1Q50RWAndlDINnDg-MHDRwsRt4Xa_PYbFwTfRm4
+
+{
+            "monthly_sheet_id":"672ff3e2ca9ffa09f6237496",
+            "incomePlan_id":"671d6dd95d766263a6daae53",
+            "amount":200,
+            "description":"Unga Bunga"
+}
+
+### Create Income
+
+GET http://localhost:5000/api/Income
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTcxMjIzNiwiZXhwIjoxNzMxNzk4NjM2fQ.t73y1Q50RWAndlDINnDg-MHDRwsRt4Xa_PYbFwTfRm4
+
+### Get all Income
+
+
+GET http://localhost:5000/api/Income/6736417ae55007b7011a9684
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTcxMjIzNiwiZXhwIjoxNzMxNzk4NjM2fQ.t73y1Q50RWAndlDINnDg-MHDRwsRt4Xa_PYbFwTfRm4
+
+### Get a Income
+
+PUT http://localhost:5000/api/Income/6736417ae55007b7011a9684
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTcxMjIzNiwiZXhwIjoxNzMxNzk4NjM2fQ.t73y1Q50RWAndlDINnDg-MHDRwsRt4Xa_PYbFwTfRm4
+
+{
+    "amount": "230",
+    "description": "ulala ulala"
+}
+
+### Update a Income
+
+
+DELETE http://localhost:5000/api/Income/671e093316b0b393ed5f34e7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Soft Delete a Income
+
+DELETE http://localhost:5000/api/IncomeDelete/671e093316b0b393ed5f34e7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Hard Delete a Income
+
+
+
+################################ Expense ##########################################
+
+POST http://localhost:5000/api/Expense
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTcxMjIzNiwiZXhwIjoxNzMxNzk4NjM2fQ.t73y1Q50RWAndlDINnDg-MHDRwsRt4Xa_PYbFwTfRm4
+
+{
+            "monthly_sheet_id":"672ff3e2ca9ffa09f6237496",
+            "ExpensePlan_id":"671d6dd95d766263a6daae53",
+            "amount":300,
+            "description":"Ding BDing"
+}
+
+### Create Expense
+
+GET http://localhost:5000/api/Expense
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTcxMjIzNiwiZXhwIjoxNzMxNzk4NjM2fQ.t73y1Q50RWAndlDINnDg-MHDRwsRt4Xa_PYbFwTfRm4
+
+### Get all Expense
+
+
+GET http://localhost:5000/api/Expense/6737defc00f99782ff470931
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTcxMjIzNiwiZXhwIjoxNzMxNzk4NjM2fQ.t73y1Q50RWAndlDINnDg-MHDRwsRt4Xa_PYbFwTfRm4
+
+### Get a Expense
+
+PUT http://localhost:5000/api/Expense/6737defc00f99782ff470931
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTcxMjIzNiwiZXhwIjoxNzMxNzk4NjM2fQ.t73y1Q50RWAndlDINnDg-MHDRwsRt4Xa_PYbFwTfRm4
+
+{
+    "amount": "230",
+    "description": "ulala ulala"
+}
+
+### Update a Expense
+
+
+DELETE http://localhost:5000/api/Expense/671e093316b0b393ed5f34e7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Soft Delete a Expense
+
+DELETE http://localhost:5000/api/ExpenseDelete/671e093316b0b393ed5f34e7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Hard Delete a Expense
+
+################################ AUTH ##########################################
+
+POST http://localhost:5000/api/user/registration
+content-Type: application/json
+
+{
+    "fullname": "Shahadat Raiyan",
+    "email": "raiyan12@gmail.com",
+    "naam": "raiyan12",
+    "password": "1@qQasdf"
+}
+
+### User Registration Regular ↑ // note and todo
+
+POST http://localhost:5000/api/user/registration/daily-report
+content-Type: application/json
+
+{
+    "fullname": "Shahadat Raiyan",
+    "email": "raiyan12@gmail.com",
+    "naam": "raiyan12",
+    "password": "1@qQasdf"
+}
+
+### User Registration Daily Report ↑
+
+POST http://192.168.11.226:5000/api/user/registration/admin
+content-Type: application/json
+
+{
+    "fullname": "Shahadat Admin",
+    "email": "raiyan15@gmail.com",
+    "naam": "raiyan15",
+    "password": "1@qQasdf"
+}
+
+### Admin Registration ADMIN ↑
+
+DELETE http://localhost:5000/api/user/637e68d770ce03fc24e52cd8
+content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### User Delete // Only by admin ↑
+
+GET http://localhost:5000/api/user/6388563fe7c0712c7ac14326
+content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+
+### Get Single User // Only by admin ↑
+
+GET http://localhost:5000/api/users
+content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkNjkxMDgwYWRhYmEzOTZjODJlZmQiLCJlbWFpbCI6InJhaXlhbjE1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImFjbCI6WyJ0b2RvIiwibm90ZXMiLCJkYWlseS1yZXBvcnQiLCJjcm0iLCJpbnZlbnRvcnkiLCJxdWlja2llIl0sImlhdCI6MTczMTE4MjA0NCwiZXhwIjoxNzMxMjY4NDQ0fQ.2YKfGhck0sh5eceiQ7zntpRbXqJB_9tGqNow4Uc4Rsw
+
+### Get All User // Only by admin ↑
+
+### user 1 LOGIN
+POST http://localhost:5000/api/login
+content-Type: application/json
+
+{
+    "email": "raiyan15@gmail.com",
+    "password": "1@qQasdf"
+}
