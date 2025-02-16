@@ -13,8 +13,10 @@ const HOST = "0.0.0.0";
 
 // import routes
 // const DailyReport = require('./routes/dailyreportroutes');
-const todoItemRoute = require('./routes/todoroutes');
+const IssueRoute = require('./routes/issueroutes');
 const planRoute = require('./routes/planroutes');
+const riskRoute = require('./routes/riskroutes');
+
 const monthlySheetRoute = require('./routes/monthlysheetroutes');
 const incomePlanRoute = require('./routes/incomeplanroutes');
 const incomeRoute = require('./routes/incomeroutes');
@@ -30,8 +32,11 @@ mongoose.connect(process.env.DB_CONNECT)
 
 
 // app.use('/', DailyReport);
-app.use('/', todoItemRoute);
+app.use('/', IssueRoute);
 app.use('/', planRoute);
+app.use('/', riskRoute);
+
+
 app.use('/', incomePlanRoute);
 app.use('/', incomeRoute);
 app.use('/', expenseRoute);
@@ -40,4 +45,4 @@ app.use('/', monthlySheetRoute);
 app.use('/', userRoute);
 
 //add port and connect to server
-app.listen(PORT,HOST, () => console.log("Server connected"));
+app.listen(PORT,HOST, () => console.log("Server connected - office localhost ip : http://192.168.11.226:5000"));

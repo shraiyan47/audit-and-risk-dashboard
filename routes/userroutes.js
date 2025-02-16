@@ -45,23 +45,25 @@ router.post("/api/user/registration/logger", async (req, res) => {
 
         // const alluser = await userModel.find({});
         res.status(200).json({ saveItem });
-        console.log("Registered User => " + req.body.fullname);
+        console.log("Registered User Logging  => " + req.body.fullname);
       } else {
         res
           .status(400)
           .json({
             ErrorMsg:
-              "Password not strong engough. Lower Case, Upper Case, Symbol & Min 8 Char. ",
+              "Password not strong engough. Lower Case, Upper Case, Symbol & Min 8 Char.  ",
           });
       }
     } else {
       res.status(409).json({ ErrorMsg: "Email or Username already Exist" });
+      console.log("Email or Username already Exist - Logging");
+
     }
 
     // res.status(200).json(saveItem);
   } catch (err) {
-    res.status(500).json({ ErrorMsg: "Server ERROR" });
-    console.log("ERROR : " + err);
+    res.status(500).json({ ErrorMsg: "Server ERROR Logging " });
+    console.log("Logging ERROR : " + err);
   }
 });
 
@@ -102,7 +104,7 @@ router.post("/api/user/registration/manager", async (req, res) => {
 
         // const alluser = await userModel.find({});
         res.status(200).json({ saveItem });
-        console.log("Registered User => " + req.body.fullname);
+        console.log("Manager Registered User => " + req.body.fullname);
       } else {
         res
           .status(400)
@@ -113,12 +115,14 @@ router.post("/api/user/registration/manager", async (req, res) => {
       }
     } else {
       res.status(409).json({ ErrorMsg: "Email or Username already Exist" });
+      console.log("Email or Username already Exist - Manager");
+
     }
 
     // res.status(200).json(saveItem);
   } catch (err) {
-    res.status(500).json({ ErrorMsg: "Server ERROR" });
-    console.log("ERROR : " + err);
+    res.status(500).json({ ErrorMsg: "Server ERROR Manager" });
+    console.log("Manager ERROR : " + err);
   }
 });
 
@@ -159,7 +163,7 @@ router.post("/api/user/registration/owner", async (req, res) => {
 
         // const alluser = await userModel.find({});
         res.status(200).json({ saveItem });
-        console.log("Registered User => " + req.body.fullname);
+        console.log("Owner Registered User => " + req.body.fullname);
       } else {
         res
           .status(400)
@@ -170,12 +174,14 @@ router.post("/api/user/registration/owner", async (req, res) => {
       }
     } else {
       res.status(409).json({ ErrorMsg: "Email or Username already Exist" });
+      console.log("Email or Username already Exist - Owner");
+
     }
 
     // res.status(200).json(saveItem);
   } catch (err) {
-    res.status(500).json({ ErrorMsg: "Server ERROR" });
-    console.log("Boom" + err);
+    res.status(500).json({ ErrorMsg: "Server ERROR Owner" });
+    console.log("Owner Boom" + err);
   }
 });
 
@@ -216,7 +222,7 @@ router.post("/api/user/registration/management", async (req, res) => {
 
         // const alluser = await userModel.find({});
         res.status(200).json({ saveItem });
-        console.log("Registered User => " + req.body.fullname);
+        console.log("Management Registered User => " + req.body.fullname);
       } else {
         res
           .status(400)
@@ -227,12 +233,13 @@ router.post("/api/user/registration/management", async (req, res) => {
       }
     } else {
       res.status(409).json({ ErrorMsg: "Email or Username already Exist" });
+      console.log("Email or Username already Exist - Management");
     }
 
     // res.status(200).json(saveItem);
   } catch (err) {
-    res.status(500).json({ ErrorMsg: "Server ERROR" });
-    console.log("Boom" + err);
+    res.status(500).json({ ErrorMsg: "Server ERROR Management" });
+    console.log("Management Boom" + err);
   }
 });
 
@@ -272,7 +279,7 @@ router.post("/api/user/registration/superadmin", async (req, res) => {
 
         // const alluser = await userModel.find({});
         res.status(200).json({ saveItem });
-        console.log("Registered User => " + req.body.fullname);
+        console.log("Superadmin Registered User => " + req.body.fullname);
       } else {
         res
           .status(400)
@@ -287,8 +294,8 @@ router.post("/api/user/registration/superadmin", async (req, res) => {
 
     // res.status(200).json(saveItem);
   } catch (err) {
-    res.status(500).json({ ErrorMsg: "Server ERROR" });
-    console.log("Boom" + err);
+    res.status(500).json({ ErrorMsg: "Server ERROR Superadmin " });
+    console.log("Superadmin Boom" + err);
   }
 });
 
@@ -301,6 +308,7 @@ router.post("/api/login", async (req, res) => {
 
     if (emailExist == null) {
       res.status(404).json({ ErrorMsg: "Email Not Found / Incorrect" });
+      console.log("login Error => Email Not Found / Incorrect");
     } else {
       const validated = await bcrypt.compare(Chabi, emailExist.chabbi);
       if (validated) {
@@ -333,10 +341,12 @@ router.post("/api/login", async (req, res) => {
           });
       } else {
         res.status(400).json({ ErrorMsg: "Wrong Password" });
+        console.log("login Error => Wrong Password");
       }
     }
   } catch (error) {
     res.status(500).json({ ErrorMsg: "Server Error" });
+    console.log("login Error => " + error);
   }
 });
 
@@ -399,7 +409,7 @@ router.get("/api/users", async (req, res) => {
     // console.log("Check Token User => ", theToken);
     if (!!theToken) {
       const tokenResult = TokenChecker.TokenChecker(theToken);
-    //   console.log(tokenResult);
+      //   console.log(tokenResult);
       // const alluser = [];
       if (tokenResult.role === "admin") {
         // res.status(200).json({ success: true, data: { userId: decodedToken.userId, email: decodedToken.email } })
