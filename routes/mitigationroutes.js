@@ -2,7 +2,7 @@ const router = require("express").Router();
 const multer = require("multer");
 const risksModel = require("../models/riskmodel");
 const TokenChecker = require("../TokenChecker");
-const issuemodel = require("../models/issuemodel");
+const mitigationmodel = require("../models/mitigationmodel");
 const usermodel = require("../models/usermodel");
 
 const ts = Date.now();
@@ -22,7 +22,7 @@ router.post("/api/risk", async (req, res) => {
       if (tokenResult) {
         console.log(req.body); //req.body is the data that we are sending to the server
 
-        const isIssueExist = await issuemodel.findById(req.body.issue_id);
+        const isIssueExist = await risksModel.findById(req.body.risk_id);
         const isOwnerExist = await usermodel.findById(req.body.risk_owner);
         if (!isIssueExist) {
           return res.status(404).json({ ErrorMsg: "Issue not found" });
@@ -30,8 +30,8 @@ router.post("/api/risk", async (req, res) => {
           if (!isOwnerExist) {
             return res.status(404).json({ ErrorMsg: "Owner not found" });
           } else {
-            const newItem = new risksModel({
-              issue_id: req.body.issue_id, // issue_id is the code of the risk
+            const newItem = new mitigationmodel({
+              risk_id: req.body.risk_id, // risk_id is the code of the risk
               risk_code: req.body.risk_code, // risk_code is the code of the risk
               risk_type: req.body.risk_type, // risk_type is the type of the risk
               probability: req.body.probability, // probability is the probability of the risk happening
@@ -70,7 +70,7 @@ router.get("/api/risk", async (req, res) => {
       const tokenResult = TokenChecker.TokenChecker(theToken);
       if (tokenResult) {
         try {
-          let allRisks = await risksModel.find({});
+          let allRisks = await mitigationmodel.find({});
           if (!allRisks) {
             return res.status(404).json({ message: "No risks found" });
           }
@@ -79,7 +79,7 @@ router.get("/api/risk", async (req, res) => {
             allRisks.map(async (risk) => {
               try {
                 const [issue, owner] = await Promise.all([
-                  issuemodel.findById(risk.issue_id).select('issue_title').lean(),
+                  risksModel.findById(risk.risk_id).select('issue_title').lean(),
                   usermodel.findById(risk.risk_owner).select('fullname email naam').lean()
                 ]);
 
@@ -134,13 +134,13 @@ router.get("/api/risk/:id", async (req, res) => {
       const tokenResult = TokenChecker.TokenChecker(theToken);
       if (tokenResult) {
         try {
-          const risk = await risksModel.findById(req.params.id);
+          const risk = await mitigationmodel.findById(req.params.id);
           if (!risk) {
             return res.status(404).json({ message: "Risk not found" });
           }
 
           const [issue, owner] = await Promise.all([
-            issuemodel.findById(risk.issue_id).select('issue_title').lean(),
+            risksModel.findById(risk.risk_id).select('issue_title').lean(),
             usermodel.findById(risk.risk_owner).select('fullname email naam').lean()
           ]);
 
@@ -189,7 +189,7 @@ router.get("/api/risk/owner/:owner", async (req, res) => {
       console.log("Return Token ", tokenResult);
 
       if (tokenResult) {
-        const allTodoItems = await risksModel.find({
+        const allTodoItems = await mitigationmodel.find({
           risk_owner: req.params.owner,
         });
         res.status(200).json(allTodoItems);
@@ -217,10 +217,10 @@ router.put("/api/risk/:id", async (req, res) => {
         const updateData = {
           ...req.body,
         };
-        const updateItem = await risksModel.findByIdAndUpdate(req.params.id, {
+        const updateItem = await mitigationmodel.findByIdAndUpdate(req.params.id, {
           $set: updateData,
         });
-        const allTodoItems = await risksModel.find({
+        const allTodoItems = await mitigationmodel.find({
           userId: tokenResult.userId,
         });
         res.status(200).json({ updateItem, allTodoItems });
@@ -245,7 +245,7 @@ router.delete("/api/risk/:id", async (req, res) => {
 
       if (tokenResult) {
         //find the item by its id and delete it
-        const deleteItem = await risksModel.findByIdAndDelete(req.params.id);
+        const deleteItem = await mitigationmodel.findByIdAndDelete(req.params.id);
         res.status(200).json({ msg: "Item Deleted" });
       } else {
         res.status(401).json({ ErrorMsg: "Unauthorized User" });

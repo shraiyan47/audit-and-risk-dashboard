@@ -74,6 +74,7 @@ router.get("/api/issue", async (req, res) => {
   }
 });
 
+
 router.get("/api/issue/status/:status", async (req, res) => { // filter only issues with status
   try {
     const theToken = req.headers.authorization;

@@ -358,7 +358,7 @@ router.get("/api/user/:id", async (req, res) => {
       const tokenResult = TokenChecker.TokenChecker(theToken);
     //   console.log("Return Token ", tokenResult);
 
-      if (tokenResult) {
+      if (tokenResult.userId === req.params.id || tokenResult.role === 'admin' || tokenResult.role === 'management' || tokenResult.role === 'manager') {
         // console.log("Lol Token ", tokenResult);
         const theUser = await userModel.findById(req.params.id);
         res.status(200).json(theUser);
@@ -411,13 +411,37 @@ router.get("/api/users", async (req, res) => {
       const tokenResult = TokenChecker.TokenChecker(theToken);
       //   console.log(tokenResult);
       // const alluser = [];
-      if (tokenResult.role === "admin") {
+      if (tokenResult.role === 'admin' || tokenResult.role === 'management' || tokenResult.role === 'manager') {
         // res.status(200).json({ success: true, data: { userId: decodedToken.userId, email: decodedToken.email } })
         const alluser = await userModel.find({});
         res.status(200).json(alluser);
       } else {
         res.status(401).json({ ErrorMsg: "User Not an Admin" });
       }
+    } else {
+      res.status(406).json({ ErrorMsg: "Undifined Auth Token" });
+    }
+  } catch (err) {
+    res.status(500).json({ Error: err, ErrorMsg: "Server Error" });
+  }
+});
+
+// get All Owner type users Data
+router.get("/api/owner", async (req, res) => {
+  try {
+    const theToken = req.headers.authorization;
+    // console.log("Check Token User => ", theToken);
+    if (!!theToken) {
+      const tokenResult = TokenChecker.TokenChecker(theToken);
+      //   console.log(tokenResult);
+      // const alluser = [];
+      // if (tokenResult.role === "admin") {
+        // res.status(200).json({ success: true, data: { userId: decodedToken.userId, email: decodedToken.email } })
+        const alluser = await userModel.find({role:'owner'});
+        res.status(200).json(alluser);
+      // } else {
+      //   res.status(401).json({ ErrorMsg: "User Not an Admin" });
+      // }
     } else {
       res.status(406).json({ ErrorMsg: "Undifined Auth Token" });
     }

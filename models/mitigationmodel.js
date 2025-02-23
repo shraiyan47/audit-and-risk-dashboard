@@ -2,36 +2,27 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 //create Schema
-const RisksSchema = new mongoose.Schema(
+const MitigationsSchema = new mongoose.Schema(
   {
-    issue_id: {
+    risk_id: {
       type: String,
       required: true,
     },
-    risk_code: {
+    actions: {
       type: String,
-      // required: true,
+      required: true,
     },
-    risk_type: {
+    timeline: {
       type: String,
-      // required: true,
+      required: true,
     },
-    probability: {
+    resources: {
       type: String,
-      // required: true,
+      required: true,
     },
-    impact: {
+    status: {
       type: String,
-      // required: true,
-    },
-    risk_owner: {
-      type: String,
-      // required: true,
-      //  type: Schema.Types.ObjectId, ref: 'beboharkaris' 
-    },
-    risk_status: {
-      type: String,
-      // required: true,
+      required: true,
     },
     date: {
       type: Date,
@@ -46,9 +37,9 @@ const RisksSchema = new mongoose.Schema(
       // required: true,
     },
   },
-  { collection: "risk" }
+  { collection: "mitigation" }
 );
 
 //export this Schema
 
-module.exports = mongoose.model("risks", RisksSchema);
+module.exports = mongoose.model("mitigations", MitigationsSchema);
