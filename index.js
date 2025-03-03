@@ -11,17 +11,11 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 const HOST = "0.0.0.0";
 
-// import routes
-// const DailyReport = require('./routes/dailyreportroutes');
-const IssueRoute = require('./routes/issueroutes');
-const planRoute = require('./routes/planroutes');
+// import routes 
+const IssueRoute = require('./routes/issueroutes'); 
 const riskRoute = require('./routes/riskroutes');
+const mitigationRoute = require('./routes/mitigationroutes');
 
-const monthlySheetRoute = require('./routes/monthlysheetroutes');
-const incomePlanRoute = require('./routes/incomeplanroutes');
-const incomeRoute = require('./routes/incomeroutes');
-const expenseRoute = require('./routes/expenseroutes');
-const expensePlanRoute = require('./routes/expenseplanroutes');
 const userRoute = require('./routes/userroutes');
 mongoose.set("strictQuery", false);
 
@@ -33,15 +27,8 @@ mongoose.connect(process.env.DB_CONNECT)
 
 // app.use('/', DailyReport);
 app.use('/', IssueRoute);
-app.use('/', planRoute);
 app.use('/', riskRoute);
-
-
-app.use('/', incomePlanRoute);
-app.use('/', incomeRoute);
-app.use('/', expenseRoute);
-app.use('/', expensePlanRoute);
-app.use('/', monthlySheetRoute);
+app.use('/', mitigationRoute);
 app.use('/', userRoute);
 
 //add port and connect to server

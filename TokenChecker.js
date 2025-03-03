@@ -10,24 +10,22 @@ function TokenChecker(AuthToken) {
     
         //Authorization: 'Bearer TOKEN'
         if (!token) {
-            return res.status(401).json({
-                success: false, message: "Error! Token was not provided."
-            });
+            return { success: false, status: 401, message: "Error! Token was not provided." };
         }
         else {
             //Decoding the token
             // return jwt.verify(token, process.env.JWT_SECRET_KEY,{algorithms:"HS256", ignoreExpiration: true });
-            return jwt.verify(token, process.env.JWT_SECRET_KEY,{algorithms:"HS256" });
+            const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY,{algorithms:"HS256" });
+            return { success: true, decoded };
         }}
         else
         {
             console.log("Check Token -> ", AuthToken);
-            return res.status(406).json({"ErrorMsg":"Undifined AuthToken"})
+            return { success: false, status: 406, message: "Undefined AuthToken" };
         }
     } catch (error) {
-        return res.status(500).json({"Catch Error": error , "Error Msg": "Auth Token Error!!"})
+        return { success: false, status: 500, message: "Auth Token Error!!", error };
     }
-
 }
 
 module.exports = { TokenChecker }
