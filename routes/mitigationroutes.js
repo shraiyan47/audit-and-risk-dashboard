@@ -19,11 +19,11 @@ router.post("/api/mitigation", async (req, res) => {
       const tokenResult = TokenChecker.TokenChecker(theToken); // Check the token validity
       console.log("Return Token ", tokenResult);
 
-      if (tokenResult) {
+      if (tokenResult?.success) {
         console.log(req.body); // Log the request body
 
         const isRiskExist = await risksModel.findById(req.body.risk_id); // Check if the risk exists
-        const isOwnerExist = await usermodel.findById(req.body.userId); // Check if the owner exists
+        const isOwnerExist = await usermodel.findById(tokenResult?.decoded?.userId); // Check if the owner exists
         if (!isRiskExist) {
           return res.status(404).json({ ErrorMsg: "Risk not found" });
         } else {
@@ -38,7 +38,7 @@ router.post("/api/mitigation", async (req, res) => {
               status: req.body.status, // Status of the mitigation
               date: ts, // Current timestamp
               complete: false, // Completion status
-              userId: tokenResult.userId, // User ID from the token
+              userId: tokenResult?.decoded?.userId, // User ID from the token
             });
             // Save this item in the database
             const saveItem = await newItem.save();
@@ -215,7 +215,7 @@ router.put("/api/mitigation/:id", async (req, res) => {
         };
         const updateItem = await mitigationModel.findByIdAndUpdate(req.params.id, {
           $set: updateData,
-        });
+        }, { new: true }); // Return the updated document
         const allMitigations = await mitigationModel.find({
           userId: tokenResult.userId,
         });
